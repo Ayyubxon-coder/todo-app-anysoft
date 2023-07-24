@@ -1,11 +1,12 @@
-import TodoList from '../components/todo-list/TodoList';
+import { Button, Input } from '@/design-system';
+import { TodoList } from '@/components';
 import { taskStore } from '../store';
-import { useState } from 'react';
+import { ChangeEvent, FC, FormEvent, useState } from 'react';
 
-const Home: React.FC = () => {
+const Home: FC = () => {
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
-  const handleAddTask = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleAddTask = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (newTaskTitle.trim() !== '') {
       taskStore.addTask(newTaskTitle);
@@ -17,16 +18,16 @@ const Home: React.FC = () => {
     <div className='container mx-auto p-4 w-full h-screen'>
       <h1 className='text-2xl font-bold mb-4'>Todo List</h1>
       <form onSubmit={handleAddTask} className='mb-4 flex'>
-        <input
+        <Input
           type='text'
           className='flex-1 p-2 mr-2'
           placeholder='Enter task title'
           value={newTaskTitle}
-          onChange={(e) => setNewTaskTitle(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setNewTaskTitle(e.target.value)
+          }
         />
-        <button className='p-2 bg-blue-500 text-white' type='submit'>
-          Add Task
-        </button>
+        <Button title='Add Task' type='submit' />
       </form>
       <TodoList />
     </div>

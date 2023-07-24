@@ -1,5 +1,6 @@
 import { DragEvent, HTMLAttributes } from 'react';
 import { Task } from '../Task';
+import { Button } from '@/design-system';
 
 type TodoPropsType = {
   task: Task;
@@ -24,12 +25,7 @@ export function Todo({
       data-data={JSON.stringify(task)}
     >
       <span>{task.title}</span>
-      <button
-        className={`bg-red-700 w-full text-[white]`}
-        onClick={() => deleteTask(task)}
-      >
-        Delete
-      </button>
+      <Button color='danger' onClick={() => deleteTask(task)} title='Delete' />
     </div>
   );
 }

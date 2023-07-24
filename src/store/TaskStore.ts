@@ -1,6 +1,6 @@
 // src/TaskStore.ts
 import { makeAutoObservable } from 'mobx';
-import { Task, initialStatusOptions } from '../components/Task';
+import { Task, initialStatusOptions } from '@/components';
 import { nanoid } from 'nanoid';
 
 class TaskStore {
