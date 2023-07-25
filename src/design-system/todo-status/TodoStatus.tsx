@@ -32,6 +32,7 @@ export function TodoStatus({
         .filter((todo) => todo.status === status)
         .map((todo) => (
           <Todo
+            key={todo.id}
             handleDragStart={handleDragStart}
             task={todo}
             deleteTask={() => taskStore.deleteTask(todo)}

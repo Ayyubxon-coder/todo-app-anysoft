@@ -30,6 +30,7 @@ export const TodoList: FC = observer(() => {
     <div className='flex'>
       {taskStore.initialStatusOptions.map((status) => (
         <TodoStatus
+          key={status}
           handleDragStart={handleDragStart}
           handleDrop={handleDrop}
           tasks={taskStore.filteredTasks}
