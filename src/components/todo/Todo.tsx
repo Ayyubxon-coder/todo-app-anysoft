@@ -22,7 +22,6 @@ export function Todo({
       draggable={true}
       className={`bg-white p-4 mb-4 shadow  flex flex-col cursor-pointer items-center`}
       onDragStart={(event) => handleDragStart(event, task)}
-      data-data={JSON.stringify(task)}
     >
       <span>{task.title}</span>
       <Button color='danger' onClick={() => deleteTask(task)} title='Delete' />
