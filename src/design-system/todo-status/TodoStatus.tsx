@@ -22,7 +22,6 @@ export function TodoStatus({
       {...props}
       key={status}
       className='flex-1 p-4 h-[500px] bg-slate-300 ml-5'
-      data-status={JSON.stringify(status)}
       onDrop={(event) => handleDrop(event, status)}
       onDragOver={(event) => event.preventDefault()}
       onDragEnter={(event) => event.preventDefault()}
